@@ -29,16 +29,12 @@ const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "evol2Foi+smsql",
-    port:3306,
 });
 
 //Websocket
 //établissement de la connexion
 io.on('connection', function (socket){
     console.log(`Connecté au client ${socket.id}`)
-
-    //émission d'un évènement - TEST
-    io.emit('donnees','86')
 
     //TTN
     var options = {
