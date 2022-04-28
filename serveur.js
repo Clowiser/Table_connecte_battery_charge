@@ -17,7 +17,7 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
-server.listen(5000, function(){
+server.listen(3000, function(){
     console.log('listening on 3000 avec Websockets');
 });
 
