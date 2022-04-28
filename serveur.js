@@ -29,6 +29,7 @@ const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "evol2Foi+smsql",
+    port:3306,
 });
 
 //Websocket
