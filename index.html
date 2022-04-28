@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+    <title>Application batterie table</title>
+</head>
+
+<body>
+   
+    <div class="container_title_logo">
+        <h1>Trouvez la table pour votre recharge !</h1>
+    </div>
+
+    <div class="container_table_infos">
+
+        <div class="table_infos_green">
+            <div class="name_map">
+                <h2>Table Einstein</h2>
+                <input type="image" id="btn" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-map-vacation-planning-adventure-flaticons-flat-flat-icons-2.png" />
+            </div>
+            <p>Charge de la batterie : </p> 
+            <h2 id="baterieCharge" class="pourcentage_batterie"> 
+                <span id="batterieCharge"></span>
+            </h2>
+        </div>
+
+        <div class="table_infos_red">
+            <div class="name_map">
+                <h2>Table Newton</h2>
+                <input type="image" id="btn2" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-map-vacation-planning-adventure-flaticons-flat-flat-icons-2.png" />
+            </div>
+            <p>Charge de la batterie : </p> 
+            <h2 id="baterieCharge" class="pourcentage_batterie">10 %</h2>
+        </div>
+
+        <div class="table_infos_green">
+            <div class="name_map">
+                <h2>Table Darwin</h2>
+                <input type="image" id="btn3"src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-map-vacation-planning-adventure-flaticons-flat-flat-icons-2.png" />
+            </div>
+            <p>Charge de la batterie : </p> 
+            <h2 id="baterieCharge" class="pourcentage_batterie">90 %</h2>
+        </div>
+
+        <div class="table_infos_orange">
+            <div class="name_map">
+                <h2>Table Curie</h2>
+                <input type="image" id="btn4"src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-map-vacation-planning-adventure-flaticons-flat-flat-icons-2.png" />
+            </div>
+            <p>Charge de la batterie : </p> 
+            <h2 id="baterieCharge" class="pourcentage_batterie">45 %</h2>
+        </div>
+
+        <div class="table_infos_orange">
+            <div class="name_map">
+                <h2>Table Lovelace</h2>
+                <input type="image" id="btn5"src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-map-vacation-planning-adventure-flaticons-flat-flat-icons-2.png" />
+            </div>
+            <p>Charge de la batterie : </p> 
+            <h2 id="baterieCharge" class="pourcentage_batterie">56 %</h2>
+        </div>
+
+        <div class="table_infos_green">
+            <div class="name_map">
+                <h2>Table Hawking</h2>
+                <input type="image" id="btn6"src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-map-vacation-planning-adventure-flaticons-flat-flat-icons-2.png" />
+            </div>
+            <p>Charge de la batterie : </p> 
+            <h2 id="baterieCharge" class="pourcentage_batterie">92 %</h2>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Carte de l'IUT</h2>
+        <div class="container_img">
+            <img class="carte_IUT" src="/css/img/map-fictive.png" title="carte_IUT" />
+            <img class="vu_3D_Table_connectée" src="/css/img/table_ext.png" title="vu_3D_Table_connectée" />
+        </div>
+    </div>
+
+    </div>
+
+    <!-- SOCKETS -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+    
+    <script>
+        var socket = io();
+
+        //écoute du socket
+        socket.on('donneesBatterie', function (donnees){
+            console.log(donnees)
+            document.getElementById('batterieCharge').innerText= donnees + " %";
+          
+        })
+    </script>
+
+<script src="/js/modal.js"></script>
+<script type="text/javaScript" src="serveur.js"> </script>
+</body>
+
+<footer>
+   <p>Copyright - 2022</p> 
+</footer>
+
+</html>

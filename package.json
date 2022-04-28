@@ -1,0 +1,13 @@
+{
+  "name": "exemple",
+  "version": "0.0.1",
+  "description": "mes premieres websocket",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mqtt": "^4.3.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^2.6.6",
+    "socket.io": "^4.4.1"
+  }
+}

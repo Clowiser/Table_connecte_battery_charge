@@ -1,0 +1,71 @@
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  padding: 3%;
+  left: 0;
+  top: 0;
+  
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  color: black;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 95%;
+  border-radius: 20px;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.carte_IUT {
+    width: 35%;
+}
+
+.vu_3D_Table_connectée{
+    width: 50%;
+    height: 40%;
+}
+
+.container_img{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pourcentage_batterie {
+    animation: clignote 2s linear infinite;
+    }
+    @keyframes clignote {  
+    50% { opacity: 0; }
+}
+
+
+@media (max-width: 700px){
+
+    .vu_3D_Table_connectée{
+        display: none;
+    }
+
+    .carte_IUT {
+        width: 80%;
+    }
+
+}
